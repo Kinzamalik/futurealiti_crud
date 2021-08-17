@@ -1,3 +1,19 @@
+<?php
+
+
+
+session_start();
+if($_SESSION["user"]==null)
+{
+
+    header("location:login.php");
+}
+// Include config file
+require_once "config.php";
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +49,13 @@
                         <a href="create.php" class="btn btn-success pull-right"><i class="fa fa-plus"></i> Add New Employee</a>
                     </div>
                     <?php
+
+                    session_start();
+                    if($_SESSION["user"]==null)
+                    {
+
+                        header("location:login.php");
+                    }
                     // Include config file
                     require_once "config.php";
                     
@@ -78,6 +101,9 @@
                     // Close connection
                     mysqli_close($link);
                     ?>
+
+                    <a href="logout.php" class="btn btn-primary">Logout</a>
+
                 </div>
             </div>        
         </div>
