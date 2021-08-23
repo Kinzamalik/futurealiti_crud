@@ -1,7 +1,4 @@
 <?php
-
-
-
 session_start();
 if($_SESSION["user"]==null)
 {
@@ -50,15 +47,6 @@ require_once "config.php";
                     </div>
                     <?php
 
-                    session_start();
-                    if($_SESSION["user"]==null)
-                    {
-
-                        header("location:login.php");
-                    }
-                    // Include config file
-                    require_once "config.php";
-                    
                     // Attempt select query execution
                     $sql = "SELECT * FROM employees";
                     if($result = mysqli_query($link, $sql)){

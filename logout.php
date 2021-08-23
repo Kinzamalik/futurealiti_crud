@@ -26,6 +26,7 @@ session_start();
 session_unset();
 session_destroy();
 echo 'You have been logged out. <a href="/">Go back</a>';
+
 header('location:login.php');
 
 
@@ -34,5 +35,6 @@ header('location:login.php');
 ?>
 
 
+<button type="submit" name="btn" >Logo</button>
 </body>
 </html>
